@@ -1,0 +1,163 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.app{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 900px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding:20px;
+  background: #3a078cd6;
+}
+
+.menu {
+  display: flex;
+  justify-content: flex-end;
+  margin: auto 10px;
+}
+
+.menu > li {
+  display: inline;
+  margin-right: 50px;
+}
+
+.menu > li:last-of-type {
+  margin-right: 0;
+}
+
+li{
+  font-family: 'Questrial';
+  color: #eeeeee;
+  font-weight: 700;
+}
+
+li:hover{
+  color: #ba5802;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.user-lister-page{
+  display: flex;    
+  flex: 2;
+}
+
+.user-list-bar{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 60px;
+  background-color: #996af8d7;
+  flex:0.5;
+}
+
+.userlist-header{
+  text-align: center;
+  font-family: 'Questrial';
+  color: #eeeeee;
+  margin-bottom: 50px;
+}
+
+.userlist-icon{
+  display: flex;
+  justify-content: flex-start;
+  max-height: 40px;
+  margin-bottom: 10px;
+}
+
+.userlist-name{
+  text-align: center; 
+  padding-left: 10px;  
+}
+
+.userlist-name-selected:active{
+  text-align: center; 
+  padding-left: 10px;  
+  color: yellow;
+}
+
+.user-profile{
+  display: flex;
+  flex-direction: column;
+  align-items: center;    
+  padding: 60px;
+  flex:2;
+  font-family: 'Questrial';
+  font-size: 22px;
+}
+
+.user-profile-header{
+  display: flex;
+  justify-content: center; 
+}
+
+.user-big-image{
+  border-radius: 50%;
+  width: 25%;
+  align-self: start;
+}
+
+.user-profile-name{
+  text-align: center; 
+  padding-top: 40px;
+  padding-left: 20px;  
+}
+
+.user-profile-content{
+  display: flex;
+  justify-content: center;    
+  padding: 60px;
+  max-width: 600px;
+}
+
+.cloudAppi{
+  width: 8%; 
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown > span {
+  z-index: 2;
+  position: relative;  
+  cursor: pointer;
+}
+
+.features-menu {                   
+  display: none;
+}
+
+.dropdown:hover .features-menu {
+  display: flex;
+  flex-direction: column;
+  background: #00bbd4cb;
+  border-radius: 5px;
+  padding-top: 60px;
+
+  position: absolute;      
+  top: -25px;
+  left: -40px;
+  z-index: 1;
+}
+
+.features-menu li {
+  list-style: none;
+  border-bottom: 1px solid #FFF;
+
+  padding: 0 40px 10px 20px;
+  margin: 5px;
+}
+
+.features-menu li:last-of-type {
+  border-bottom: none;
+}

@@ -20,7 +20,7 @@ function Header({ onClickHeader, userInfoHeader}) {
               <ul class='features-menu'> 
                 {userInfoHeader.map(user => {
                   return(
-                  <li key={user.id} onClick={()=>onClickHeader(user.id)}>{user.name}</li>);
+                  <li key={user.id} onClick={()=>onClickHeader(user)}>{user.name}</li>);
                 })} 
               </ul>
             </li>

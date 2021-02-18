@@ -2,11 +2,12 @@ import './App.css';
 import Header from '../Header';
 import UserLister from '../UserLister';
 import UserService from '../../UserService';
+import { connect } from 'react-redux';
+import { selectUser } from '../../actions';
 import React, { useState, useEffect } from 'react';
 
-function App() {
+function App(props) {
   const [users, setUsers] = useState([]);
-  const [selectedUser, setSelectedUser] = useState(null);
 
   const userService = new UserService({
     apiUrl: "https://my-user-manager.herokuapp.com"
@@ -18,19 +19,17 @@ function App() {
       setUsers(userlist);
     }
     fetchData();
-  }, []);
-
-  const handleClick = (id) =>{
-    const user = users.find(user => user.id === id);
-    setSelectedUser(user);
-  }
+  });
 
   return (
     <div className="app">
-      <Header onClickHeader={handleClick} userInfoHeader={users}/>
-      <UserLister onClickBar={handleClick} userInfoLister={users} userSelected={selectedUser}/>
+      <Header onClickHeader={props.selectUser} userInfoHeader={users}/>
+      <UserLister onClickBar={props.selectUser} userInfoLister={users} userSelected={props.selectedUser}/>
     </div>
   );
 }
 
-export default App;
+const mapStateToProps = (state) => {
+  return {selectedUser: state.selectedUser};
+}
+export default connect(mapStateToProps, { selectUser })(App);

@@ -9,7 +9,7 @@ function ListBar({listInfo, onClickListBar}){
       <h2 class='userlist-header'>User List</h2>
       {listInfo && listInfo.map(info => {
         return(
-         <li class='userlist-icon' onClick={()=>onClickListBar(info.id)}>
+         <li class='userlist-icon' onClick={()=>onClickListBar(info)}>
           <img class='usericon' src={picture} alt="female profile"/>
           <h4 class='userlist-name'>{info.name}</h4>
           </li>);
